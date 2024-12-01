@@ -9,7 +9,7 @@ public class Puzzle1 {
             ArrayList<Integer> b = new ArrayList<>();
             while ((line = raf.readLine()) != null) {
                 String[] tokens = line.split("   ");
-                //System.out.println(tokens[0]+" "+tokens[1]);
+                
                 a.add(Integer.parseInt(tokens[0]));
                 b.add(Integer.parseInt(tokens[1]));
             }
@@ -32,14 +32,14 @@ public class Puzzle1 {
                 bFrequency.put(num, bFrequency.getOrDefault(num, 0) + 1);
             }
 
-            // Calculate the total similarity score
+            
             int similarityScoreSum = 0;
             for (int num : a) {
-                int occurrences = bFrequency.getOrDefault(num, 0); // Get occurrences of num in b
+                int occurrences = bFrequency.getOrDefault(num, 0); 
                 similarityScoreSum += num * occurrences;
             }
 
-            // Output the similarity score
+            
             System.out.println(+ similarityScoreSum);
         }
     }
